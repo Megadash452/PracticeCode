@@ -1,9 +1,33 @@
 # --- Await, Async, Ascio ---
-def highest_prime_below(num):
-    for y in range(x - 1, 0, -1):
+import time
+import asyncio
 
+def is_prime(num):
+    return not any(num//i == num/i for i in range(num - 1, 1, -1))
 
-def asynchronous():
+async def highest_prime_below(num):
+    for y in range(num - 1, 0, -1):
+        if is_prime(y):
+            print('Highest prime below ' + str(num) + ' is: \t ' + str(y))
+            return y
+        await asyncio.sleep(0.01)
+    return none
+async def main():
+    t0 = time.time()
+
+    await asyncio.wait([
+        highest_prime_below(10000),
+        highest_prime_below(1000),
+        highest_prime_below(100),
+        highest_prime_below(5)
+    ])
+
+    t1 = time.time()
+    print('Took ' + str((100 * t1-t0)) + 'ms??')
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+loop.close()
 
 # --- ---
 
