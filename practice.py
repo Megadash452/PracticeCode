@@ -1,3 +1,13 @@
+# --- Await, Async, Ascio ---
+def highest_prime_below(num):
+    for y in range(x - 1, 0, -1):
+
+
+def asynchronous():
+
+# --- ---
+
+
 # --- Decorators --
 # --- ---
 
